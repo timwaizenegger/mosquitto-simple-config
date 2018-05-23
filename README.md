@@ -56,9 +56,10 @@ mosquitto_sub -v -d -h myhostname.de -u device1 -P secr3t -V mqttv311 -t "#"
 mosquitto_pub -h myhost.de -u device2 -P secr3t -V mqttv311 -m "hallo" -t test
 ```
 
-# Notes
+# Notes (about the config/setup)
 
 * use the same value for device ID and username when connecting
 * ech user may only connect once
-
+* persistence for messages is disabled
+* no anonymous connections
 
