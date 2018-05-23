@@ -26,15 +26,16 @@ sudo systemctl disable mosquitto
 
 ```bash
 mkdir /var/mqtt
-sudo cp mosquitto.conf.example /var/mqtt/mosquitto.conf
+chown $USER /var/mqtt 
+cp mosquitto.conf.example /var/mqtt/mosquitto.conf
 
 # create the first account and init. the passwd file
 #   enter a password for the device
-sudo mosquitto_passwd -c /var/mqtt/passwd device1
+mosquitto_passwd -c /var/mqtt/passwd device1
 
 
 # in the future, you can add users in batch mode
-sudo mosquitto_passwd -b /var/mqtt/passwd device2 secr3t
+mosquitto_passwd -b /var/mqtt/passwd device2 secr3t
 
 ```
 
